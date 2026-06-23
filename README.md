@@ -35,11 +35,11 @@ Using the assembler is strictly straightforward. There are no command-line flags
 
 ## Syntax & FASM Differences
 
-The syntax is almost identical to FASM for the instructions it supports. However, because it is specifically tailored for Tundra, there are strict limitations you must be aware of if you try to write assembly for it by hand.
+The syntax is almost identical to FASM for the instructions it supports. However, because it is simplified, there are strict limitations you must be aware of if you try to write assembly for it by hand.
 
 ### Unsupported FASM Features
 * **No Macros:** The assembler does not support macros of any kind.
-* **Limited Instruction Set:** It only knows how to encode the specific x86_64 instructions utilized by the Tundra compiler pipeline. Unrecognized instructions will simply fail to assemble.
+* **Limited Instruction Set:** It only knows how to encode the specific x86_64 instructions shown below. Unrecognized instructions will simply fail to assemble.
 * **No Complex Equates:** Mathematical expressions are generally limited. You cannot do complex arithmetic in declarations.
 
 ### Directive Limitations
@@ -64,7 +64,7 @@ The assembler expects a standard FASM-like file structure. The following directi
 * `rb`: Reserve bytes (BSS).
 * `rq`: Reserve quadwords (BSS). 
 
-*(Note: Uninitialized `rb`/`rq` memory is automatically merged with the data segment at compile-time to reduce the compiled ELF header footprint, mirroring FASM's optimization).*
+*(Note: Uninitialized `rb`/`rq` memory is automatically merged with the data segment at assemble-time to reduce the binary ELF header footprint, mirroring FASM's optimization).*
 
 ## Supported Registers
 

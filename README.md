@@ -1,6 +1,6 @@
-# Tundra_assembler
+# HT-Assembler
 
-Tundra_assembler is a minimal, dependency-free assembler that produces highly optimized, Section-Header-Free ELF64 executable binaries for Linux x86_64 (AMD64 / Intel 64). 
+HT-Assembler is a minimal, dependency-free assembler that produces highly optimized, Section-Header-Free ELF64 executable binaries for Linux x86_64 (AMD64 / Intel 64). 
 
 ### ⚠️ Important Note: Not a Universal Assembler
 **This is not meant to be a universal or fully-fledged assembler.** 
@@ -9,12 +9,12 @@ Tundra_assembler is a minimal, dependency-free assembler that produces highly op
 
 ## Building the Assembler
 
-Tundra_assembler is written in **HTVM** (a custom language which is itself written in HTVM). However, HTVM transpiles directly to C++, meaning you do not need any special toolchains to build the assembler. 
+HT-Assembler is written in **HTVM** (a custom language which is itself written in HTVM). However, HTVM transpiles directly to C++, meaning you do not need any special toolchains to build the assembler. 
 
 You simply compile the generated C++ source file using any standard C++ compiler:
 
 ```bash
-g++ Tundra_assembler.cpp -o Tundra_assembler
+g++ HT-Assembler.cpp -o HT-Assembler
 ```
 
 ---
@@ -24,7 +24,7 @@ g++ Tundra_assembler.cpp -o Tundra_assembler
 Using the assembler is strictly straightforward. There are no command-line flags, options, or `-o` output arguments.
 
 ```bash
-./Tundra_assembler your_program.s
+./HT-Assembler your_program.s
 ```
 
 **Requirements:**
@@ -43,7 +43,7 @@ The syntax is almost identical to FASM for the instructions it supports. However
 * **No Complex Equates:** Mathematical expressions are generally limited. You cannot do complex arithmetic in declarations.
 
 ### Directive Limitations
-Tundra_assembler supports `db`, `dq`, `rb`, and `rq`, but with highly stripped-down parsing rules:
+HT-Assembler supports `db`, `dq`, `rb`, and `rq`, but with highly stripped-down parsing rules:
 
 * **`db` (Define Byte):** Only supports **up to one comma**. 
   * ✅ Supported: `db "hello world", 10` (String + single terminator)
@@ -68,7 +68,7 @@ The assembler expects a standard FASM-like file structure. The following directi
 
 ## Supported Registers
 
-Tundra_assembler supports the full standard set of x86_64 general-purpose registers across all access widths, including the high-byte registers.
+HT-Assembler supports the full standard set of x86_64 general-purpose registers across all access widths, including the high-byte registers.
 
 | Width | Registers |
 | :--- | :--- |
@@ -82,7 +82,7 @@ Tundra_assembler supports the full standard set of x86_64 general-purpose regist
 
 ## Supported Instruction Set
 
-Below is the complete list of instructions that Tundra_assembler is capable of encoding. These are organized by their logical operations.
+Below is the complete list of instructions that HT-Assembler is capable of encoding. These are organized by their logical operations.
 
 ### 1. Data Movement & Memory
 * **`mov`**: Move data between registers, registers and memory, or load immediate values.

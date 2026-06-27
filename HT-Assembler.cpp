@@ -3286,7 +3286,7 @@ int main(int argc, char* argv[]) {
     std::string paramsTemp_fileName = "";
     int enable_custom_assembler_x86_64_linux = 1;
     if (params == "") {
-        print("Usage:" + Chr(10) + "./Tundra_assembler your_file.s" + Chr(10));
+        print("Usage:" + Chr(10) + "./HT-Assembler your_file.s" + Chr(10));
     } else {
         std::vector<std::string> items56 = LoopParseFunc(params, "\n", "\r");
         for (size_t A_Index56 = 0; A_Index56 < items56.size(); A_Index56++) {

@@ -2550,7 +2550,7 @@ int enable_custom_assembler_x86_64_linux := 1
 
 
 if (params = "") {
-        print("Usage:" . Chr(10) . "./Tundra_assembler your_file.s" . Chr(10))
+        print("Usage:" . Chr(10) . "./HT-Assembler your_file.s" . Chr(10))
     }
 
     else {
